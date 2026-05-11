@@ -16,11 +16,11 @@ Underlying physics and simulation basics learnt from https://courses.physics.ill
 
 */
 
-#define DEFAULT_GRID_SIZE 10
+#define DEFAULT_GRID_SIZE 800
 
 #define DEFAULT_COUPLING_CONSTANT 1.0
 
-const double kB = 1.380649e-23; // Boltzmann constant in J/K
+const double kB = 1; // Boltzmann constant in J/K
 
 class isingData
 {
@@ -29,7 +29,9 @@ public:
     vector<int> spins;
     vector<double> magnetic_fields;
     vector<vector<std::pair<int,double>>> neighbours;
-
+    
+    int size = DEFAULT_GRID_SIZE;
+    string type = "2D_Square";
     double temperature;
     double energy;
 
@@ -47,6 +49,8 @@ public:
                 vector<std::pair<int,double>> neighbour_list;
                 //Had to correct this. We only want to have neighbours linked one way.
                 if (i < DEFAULT_GRID_SIZE - 1) neighbour_list.push_back({(i+1)*DEFAULT_GRID_SIZE+j, DEFAULT_COUPLING_CONSTANT}); // Right neighbor
+                if (i > 0) neighbour_list.push_back({(i-1)*DEFAULT_GRID_SIZE+j,DEFAULT_COUPLING_CONSTANT});
+                if (j > 0) neighbour_list.push_back({i*DEFAULT_GRID_SIZE + (j-1),DEFAULT_COUPLING_CONSTANT});
                 if (j < DEFAULT_GRID_SIZE - 1) neighbour_list.push_back({i*DEFAULT_GRID_SIZE+(j+1), DEFAULT_COUPLING_CONSTANT}); // Down neighbor
                 neighbours.push_back(neighbour_list);
             }
@@ -71,6 +75,7 @@ public:
                 energy += -neighbours[i][j].second * spins[i] *spins[neighbours[i][j].first];
             }
         }
+            energy = energy/2;
 
         return energy;
     }
@@ -82,6 +87,8 @@ public:
         for (int j = 0; j<neighbours[index].size();j++){
             energy_change += 2*neighbours[index][j].second * spins[index] *spins[neighbours[index][j].first];
         }
+
+        energy_change = energy_change/2;
         return energy_change;
     }
 
