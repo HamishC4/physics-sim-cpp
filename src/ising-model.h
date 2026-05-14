@@ -16,7 +16,7 @@ Underlying physics and simulation basics learnt from https://courses.physics.ill
 
 */
 
-#define DEFAULT_GRID_SIZE 800
+#define DEFAULT_GRID_SIZE 200
 
 #define DEFAULT_COUPLING_CONSTANT 1.0
 
@@ -26,47 +26,40 @@ class isingData
 {
 
 public:
-    vector<int> spins;
+    vector<int> spins; //Public - need to access
     vector<double> magnetic_fields;
     vector<vector<std::pair<int,double>>> neighbours;
     
-    int size = DEFAULT_GRID_SIZE;
+    int size;
     string type = "2D_Square";
     double temperature;
     double energy;
 
     //Default constructor makes a rectangular grid of 10x10 with no field. 
-    isingData(){
+    isingData(int grid_size){
         temperature = 273.15;
+        size = grid_size;
         energy = 0;
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<> dis(0, 1);
-        for (int i = 0; i<DEFAULT_GRID_SIZE;i++){
-            for (int j = 0; j<DEFAULT_GRID_SIZE;j++){
+        for (int i = 0; i<size;i++){
+            for (int j = 0; j<size;j++){
                 spins.push_back(dis(gen)==0 ? -1 : 1); // Randomly assign spin up or down
                 magnetic_fields.push_back(0); // No magnetic field
                 vector<std::pair<int,double>> neighbour_list;
                 //Had to correct this. We only want to have neighbours linked one way.
-                if (i < DEFAULT_GRID_SIZE - 1) neighbour_list.push_back({(i+1)*DEFAULT_GRID_SIZE+j, DEFAULT_COUPLING_CONSTANT}); // Right neighbor
-                if (i > 0) neighbour_list.push_back({(i-1)*DEFAULT_GRID_SIZE+j,DEFAULT_COUPLING_CONSTANT});
-                if (j > 0) neighbour_list.push_back({i*DEFAULT_GRID_SIZE + (j-1),DEFAULT_COUPLING_CONSTANT});
-                if (j < DEFAULT_GRID_SIZE - 1) neighbour_list.push_back({i*DEFAULT_GRID_SIZE+(j+1), DEFAULT_COUPLING_CONSTANT}); // Down neighbor
+                if (i < size - 1) neighbour_list.push_back({(i+1)*size+j, DEFAULT_COUPLING_CONSTANT}); // Right neighbor
+                if (i > 0) neighbour_list.push_back({(i-1)*size+j,DEFAULT_COUPLING_CONSTANT });
+                if (j > 0) neighbour_list.push_back({i*size + (j-1),DEFAULT_COUPLING_CONSTANT});
+                if (j < size - 1) neighbour_list.push_back({i*size+(j+1), DEFAULT_COUPLING_CONSTANT }); // Down neighbor
                 neighbours.push_back(neighbour_list);
             }
 
         }
     }
 
-    //Basic printing function.
-    void print_ising_grid(){
-        for (int i = 0; i<DEFAULT_GRID_SIZE;i++){
-            for (int j = 0; j<DEFAULT_GRID_SIZE;j++){
-                std::cout << (spins[i*DEFAULT_GRID_SIZE+j] == 1 ? "↓ " : "↑ ");
-            }
-            std::cout << std::endl;
-        }
-    }
+
     // Calculate the total energy according to the hamiltonian. This will work for any graph, not just the grid!
     double calculate_total_energy(){
         energy = 0;
