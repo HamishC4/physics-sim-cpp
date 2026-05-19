@@ -1,0 +1,3 @@
+/home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles/PhysicsSimApp.dir
+/home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles/edit_cache.dir
+/home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles/rebuild_cache.dir
