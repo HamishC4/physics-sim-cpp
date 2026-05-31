@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o"
   "CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o.d"
+  "CMakeFiles/PhysicsSimApp.dir/src/utilities.cpp.o"
+  "CMakeFiles/PhysicsSimApp.dir/src/utilities.cpp.o.d"
   "PhysicsSimApp"
   "PhysicsSimApp.pdb"
 )

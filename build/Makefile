@@ -153,6 +153,30 @@ src/mathplot-visualise.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsSimApp.dir/build.make CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.s
 .PHONY : src/mathplot-visualise.cpp.s
 
+src/utilities.o: src/utilities.cpp.o
+.PHONY : src/utilities.o
+
+# target to build an object file
+src/utilities.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsSimApp.dir/build.make CMakeFiles/PhysicsSimApp.dir/src/utilities.cpp.o
+.PHONY : src/utilities.cpp.o
+
+src/utilities.i: src/utilities.cpp.i
+.PHONY : src/utilities.i
+
+# target to preprocess a source file
+src/utilities.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsSimApp.dir/build.make CMakeFiles/PhysicsSimApp.dir/src/utilities.cpp.i
+.PHONY : src/utilities.cpp.i
+
+src/utilities.s: src/utilities.cpp.s
+.PHONY : src/utilities.s
+
+# target to generate assembly for a file
+src/utilities.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsSimApp.dir/build.make CMakeFiles/PhysicsSimApp.dir/src/utilities.cpp.s
+.PHONY : src/utilities.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... src/mathplot-visualise.o"
 	@echo "... src/mathplot-visualise.i"
 	@echo "... src/mathplot-visualise.s"
+	@echo "... src/utilities.o"
+	@echo "... src/utilities.i"
+	@echo "... src/utilities.s"
 .PHONY : help
 
 

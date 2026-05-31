@@ -81,12 +81,12 @@ clean: CMakeFiles/PhysicsSimApp.dir/clean
 CMakeFiles/PhysicsSimApp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsSimApp.dir/build.make CMakeFiles/PhysicsSimApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PhysicsSimApp.dir/build.make CMakeFiles/PhysicsSimApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles --progress-num=1,2 "Built target PhysicsSimApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles --progress-num=1,2,3 "Built target PhysicsSimApp"
 .PHONY : CMakeFiles/PhysicsSimApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/PhysicsSimApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/PhysicsSimApp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hamish/FIT1045/physics-sim-cpp/build/CMakeFiles 0
 .PHONY : CMakeFiles/PhysicsSimApp.dir/rule
