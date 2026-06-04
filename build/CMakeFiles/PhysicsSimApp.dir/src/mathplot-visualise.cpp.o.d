@@ -419,6 +419,14 @@ CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o: \
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/scale \
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/centroid \
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/graphstyles.h \
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/GraphVisual.h \
+ /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
+ /usr/include/c++/13/bits/deque.tcc \
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/histo \
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/grid \
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/gridfeatures \
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/graphing.h \
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/DatasetStyle.h \
  /usr/include/c++/13/thread /usr/include/c++/13/stop_token \
  /usr/include/c++/13/atomic /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/semaphore /usr/include/c++/13/bits/semaphore_base.h \

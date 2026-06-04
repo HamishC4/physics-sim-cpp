@@ -11,6 +11,9 @@ CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/flags
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/geometry
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/geometry_polyhedra
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/grid
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/gridfeatures
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/histo
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/mat
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/mathconst
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/maths/sm/quaternion
@@ -24,6 +27,8 @@ CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/ColourMap.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/ColourMap_Lists.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/CoordArrows.h
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/DatasetStyle.h
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/GraphVisual.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/NavMesh.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/RodVisual.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/ScatterVisual.h
@@ -54,6 +59,7 @@ CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/gl/util_mx.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/gl/version.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/glad/gl_mx.h
+ /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/graphing.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/graphstyles.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/keys.h
  /home/hamish/FIT1045/physics-sim-cpp/mathplot/mplot/lenthe_colormap.hpp
@@ -98,6 +104,7 @@ CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o
  /usr/include/c++/13/bits/cpp_type_traits.h
  /usr/include/c++/13/bits/cxxabi_forced.h
  /usr/include/c++/13/bits/cxxabi_init_exception.h
+ /usr/include/c++/13/bits/deque.tcc
  /usr/include/c++/13/bits/enable_special_members.h
  /usr/include/c++/13/bits/erase_if.h
  /usr/include/c++/13/bits/exception.h
@@ -171,6 +178,7 @@ CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o
  /usr/include/c++/13/bits/stl_algobase.h
  /usr/include/c++/13/bits/stl_bvector.h
  /usr/include/c++/13/bits/stl_construct.h
+ /usr/include/c++/13/bits/stl_deque.h
  /usr/include/c++/13/bits/stl_function.h
  /usr/include/c++/13/bits/stl_heap.h
  /usr/include/c++/13/bits/stl_iterator.h
@@ -229,6 +237,7 @@ CMakeFiles/PhysicsSimApp.dir/src/mathplot-visualise.cpp.o
  /usr/include/c++/13/cwctype
  /usr/include/c++/13/debug/assertions.h
  /usr/include/c++/13/debug/debug.h
+ /usr/include/c++/13/deque
  /usr/include/c++/13/exception
  /usr/include/c++/13/ext/aligned_buffer.h
  /usr/include/c++/13/ext/alloc_traits.h
