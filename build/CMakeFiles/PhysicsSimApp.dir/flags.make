@@ -6,5 +6,5 @@ CXX_DEFINES = -DMPLOT_FONTS_DIR=\"/home/hamish/FIT1045/physics-sim-cpp/mathplot/
 
 CXX_INCLUDES = -I/home/hamish/FIT1045/physics-sim-cpp/mathplot -I/home/hamish/FIT1045/physics-sim-cpp/mathplot/maths -I/usr/include/freetype2 -I/usr/include/libpng16
 
-CXX_FLAGS = -std=gnu++20 -Wall -Wextra -O3 -g -fconstexpr-ops-limit=100000000
+CXX_FLAGS = -std=gnu++20 -fconstexpr-ops-limit=100000000
 

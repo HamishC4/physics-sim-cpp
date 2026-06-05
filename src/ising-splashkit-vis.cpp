@@ -3,39 +3,53 @@
 
 #include <splashkit.h>
 
-#define WINDOW_HEIGHT 800
-#define WINDOW_WIDTH 800
+#define WINDOW_WIDTH  800
+#define WINDOW_HEIGHT  800
+
+class simGUI {
+
+    private:
 
 
-void draw_ising_grid(const isingData &data,int padding){
-    int cell_size = ceil((WINDOW_WIDTH - 2*padding)/data.size);
+    public:
 
-    for( int i = 0; i<data.size; i++){
-        for (int j = 0; j<data.size; j++){
-            int index = i*data.size + j;
-            if (data.spins[index]==1){
-                fill_rectangle(color_red(),padding+j*cell_size,padding+i*cell_size,cell_size,cell_size);
-            }
-            else{
-                fill_rectangle(color_blue(),padding+j*cell_size,padding+i*cell_size,cell_size,cell_size);
-            }
-        }
-    }
-}
+
+
+
+};
+
+
+// void draw_ising_grid(const isingData &data,int padding){
+//     int cell_size = ceil((WINDOW_WIDTH - 2*padding)/data.size);
+
+//     for( int i = 0; i<data.size; i++){
+//         for (int j = 0; j<data.size; j++){
+//             int index = i*data.size + j;
+//             if (data.spins[index]==1){
+//                 fill_rectangle(color_red(),padding+j*cell_size,padding+i*cell_size,cell_size,cell_size);
+//             }
+//             else{
+//                 fill_rectangle(color_blue(),padding+j*cell_size,padding+i*cell_size,cell_size,cell_size);
+//             }
+//         }
+//     }
+// }
 
 
 
 int main(){
     simManager manager;
-    if (manager.init_ising("2D_Square",200,0.01) == -1){
+    if (manager.init_ising("2D_Square",100,100,0,1) == -1){
         std::cout << "Failed to initialise ising sim" << std::endl;
         return -1;
     }
 
-    if (manager.init_ising("2D_Square",200,300) == -1){
+    if (manager.init_ising("2D_Square",100,0,300) == -1){
     std::cout << "Failed to initialise ising sim" << std::endl;
     return -1;
     }
+
+
     window win0 = open_window("GUI_test",800,800);
     window win1 = open_window("Ising Model 1",800,800);
     window win2 = open_window("Ising Model 2",800,800);
@@ -53,14 +67,16 @@ int main(){
     set_current_window(win1);
     clear_screen(color_white());
     draw_ising_grid(manager.get_ising_data(0),20);
-
-
-    while ((winopen1||winopen1||winopen0)){
+    int counter = 0;
+    double temp_count = 1;
+    while ((winopen1||winopen2||winopen0)){
 
         process_events();
 
         if(winopen2 && window_close_requested(win2)){
+            write_line(window_close_requested(win2));
             close_window(win2);
+            write_line("NO");
             winopen2 = false;
             write_line(to_string(winopen1 ||winopen2));
         } else if (winopen2){
@@ -72,11 +88,13 @@ int main(){
 
         if(winopen0 && window_close_requested(win0)){
             close_window(win0);
+            write_line("NO666");
             winopen0 = false;
         }
 
         if(winopen1 && window_close_requested(win1)){
             close_window(win1);
+            write_line("Close");
             winopen1 = false;
             write_line(to_string(winopen1 ||winopen2));
         } else if (winopen1){
@@ -89,15 +107,24 @@ int main(){
 
 
 
-        for (int i = 0; i<10000; i++){
+        for (int i = 0; i<100000; i++){
             manager.step_all();
         }
+        // counter ++;
+
+        // if (counter == 2){
+        //     temp_count -= 0.1;
+        //     if(temp_count <= 0.01){
+        //         temp_count = 1;
+        //     }
+
+        //     manager.isingTemp(0,temp_count);
 
 
+        //     write_line(temp_count);
 
-
-
-
+        //     counter = 0;
+        // }
     }
 
 
